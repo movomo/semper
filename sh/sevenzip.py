@@ -1132,14 +1132,12 @@ _PRESETS = {
             'x': _default_exclude.copy(),
         },
     ),
-    # a "%1.7z" "%1\*" -slp -t7z -mx=9 -mmt=2 -m0=LZMA2:d=30  -xr!"desktop.ini" -xr!"thumbs.db*"
     'extreme': SevenzipOptions(
         {
             't': '7z',
             'slp': '',
             'mx': 9,
             'mmt': 2,
-            'ms': '2g',
             'x': _default_exclude.copy(),
         },
     ).methods(
