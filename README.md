@@ -18,6 +18,12 @@ Some are plain nonsenses, some I can't find any use for anyone else but me,
 some may actually be somewhat useful.
 
 
+## Tools of the Trade
+
+On Windows, notepad++. On Linux, geany.
+When I do quick stuff such as this, I don't like to open vscode.
+
+
 ## Plans
 
 Someday, I gotta make an awesome Sphinx doc for this.
