@@ -11,6 +11,9 @@ The interfaces are awkward as a programming language;
 rather, they're designed to be convenient on Python interpreter, not IDE.
 """
 
+import os
+import sys
+
 from pathlib import Path
 from shutil import rmtree as rm, move as mv
 
@@ -77,6 +80,8 @@ from .sevenzip import Sevenzip
 
 __all__ = [
     # Auto imports for convenience.
+    'os',
+    'sys',
     
     # pathlib
     'Path',
