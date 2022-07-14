@@ -45,10 +45,23 @@ def _locate() -> T.Optional[str]:
         except FileNotFoundError:
             pass
 
-    # Looking up in the PATH is mostly for posix,
-    # but it might work on Windows too if things like chocolatey is involved.
-    if path := shutil.which('7z') is not None:
-        return path
+        # Looking up in the PATH is mostly for posix,
+        # but it might work on Windows too if things like chocolatey is involved.
+        # The console-only version '7zr' might exist too.
+        for name in ('7z', '7zr'):
+            if (path := shutil.which(name)) is not None:
+                return path
+
+    else:
+        # Recent version of 7-Zip comes with official Linux port.
+        # Their executable names are: 7zz for dynamic and 7zzs for static.
+        # However they don't seem to have been properly packaged yet,
+        # so we just don't know what its actual executable name will be.
+        # in any case, this will try to locate the official names first
+        # and fall back to 7z, whether it's official or from p7zip.
+        for name in ('7zz', '7zzs', '7z'):
+            if (path := shutil.which(name)) is not None:
+                return path
 
 def _locate_auxiliary(exe: T.Union[str, None], aux: str) -> T.Union[str, None]:
     """Used to locate 7zG.exe and 7zFM.exe on Windows."""
@@ -469,7 +482,7 @@ class SevenzipOptions(UserDict):
         but returns self anyway for convenience.
         """
         if isinstance(others, abc.Mapping):
-            raise 
+            raise
         for other in others:
             self.update(other)
         return self
@@ -998,12 +1011,12 @@ class SevenzipOptions(UserDict):
         self['mqs'] = 'on' if value else 'off'
         return self
     mqs = sort
-    
+
     def filter(
         self, value: T.Union[bool, CompressionFilter]
     ) -> SevenzipOptions:
         """Enables or disables compression filters.
-        
+
         The default mode is f=on, when 7-zip uses filter only for executable
         files: dll, exe, ocx, sfx, sys.
         It uses BCJ2 filter in Ultra mode and BCJ filter in other modes.
