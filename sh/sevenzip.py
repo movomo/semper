@@ -1141,7 +1141,7 @@ _PRESETS = {
             'x': _default_exclude.copy(),
         },
     ).methods(
-        LZMA2Method({'d': 30}),
+        LZMA2Method({'d': 29}),
     ),
 
     # Mix-in's
