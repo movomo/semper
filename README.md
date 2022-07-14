@@ -2,6 +2,11 @@
 
 My python profile-something, intended for trivial, everyday uses.
 
+At first this was named 'everyday'.
+Then I thought it's a bit much of typing, so renamed it 'semper'.
+And then again I discovered that the name 'daily' is even shorter.
+But can't change now. (Doh!)
+
 
 ## Description
 
