@@ -66,6 +66,8 @@ as long as the function's interface is identical to the built-in `map` or
   of paths and your program must run both on Windows and Unix.
   For example, they can be used as dict keys.
 
+- heap: This module is an OOP wrapper around the standard library *heapq*.
+
 ### sh
 
 Now the real weird things. Few of them will make sense as a programming api,
