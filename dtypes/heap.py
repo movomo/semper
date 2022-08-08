@@ -45,11 +45,10 @@ class Heap(object):
         return heapq.nsmallest(n, iterable, key=key)
 
     # Copypasta of original docstrings
-    __init__.__doc__ = __init__.push.__doc__
-    push.__doc__ = heapq.push.__doc__
-    pop.__doc__ = heapq.pop.__doc__
-    pushpop.__doc__ = heapq.pushpop.__doc__
-    replace.__doc__ = heapq.replace.__doc__
+    push.__doc__ = heapq.heappush.__doc__
+    pop.__doc__ = heapq.heappop.__doc__
+    pushpop.__doc__ = heapq.heappushpop.__doc__
+    replace.__doc__ = heapq.heapreplace.__doc__
     merge.__doc__ = heapq.merge.__doc__
     nlargest.__doc__ = heapq.nlargest.__doc__
     nsmallest.__doc__ = heapq.nsmallest.__doc__
